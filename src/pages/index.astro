@@ -1,0 +1,17 @@
+---
+import { PlaceHolder } from "@/components/utils/PlaceHolder";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Button } from "antd";
+import { styled as p } from "panda/jsx";
+---
+
+<BaseLayout>
+  <p.div fontSize="2xl">よお！</p.div>
+  <PlaceHolder client:load>
+    <Button type="primary" size="large" loading client:load>
+      <p.span>これはボタン</p.span>
+    </Button>
+  </PlaceHolder>
+
+  <p.pre>public static</p.pre>
+</BaseLayout>

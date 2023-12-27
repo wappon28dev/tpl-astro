@@ -1,0 +1,35 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import { styled as p } from "panda/jsx";
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="{Astro.generator}" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <title>tpl-astro</title>
+  </head>
+
+  <p.body>
+    <ViewTransitions />
+    <p.div
+      w="100%"
+      display="grid"
+      gridTemplateRows="auto 1fr auto"
+      gridTemplateColumns="100%"
+      minH="100vh"
+    >
+      <p.header />
+      <p.main m="0 auto" maxW="1200px" p="20px" w="100%">
+        <slot />
+      </p.main>
+      <p.footer />
+    </p.div>
+  </p.body>
+
+
+</html>
