@@ -1,8 +1,10 @@
 ---
+import { Icon } from "@/components/utils/Icon";
 import { PlaceHolder } from "@/components/utils/PlaceHolder";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Button } from "antd";
 import { styled as p } from "panda/jsx";
+import accountTreeOutlineRounded from "@iconify/icons-material-symbols/account-tree-outline-rounded";
 ---
 
 <BaseLayout>
@@ -11,6 +13,10 @@ import { styled as p } from "panda/jsx";
     <Button type="primary" size="large" loading client:load>
       <p.span>これはボタン</p.span>
     </Button>
+  </PlaceHolder>
+  <PlaceHolder client:load><p.div>うおおお</p.div></PlaceHolder>
+  <PlaceHolder client:load>
+    <Icon icon={accountTreeOutlineRounded} client:load />
   </PlaceHolder>
 
   <p.pre>public static</p.pre>
