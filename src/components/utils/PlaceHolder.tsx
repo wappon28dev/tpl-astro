@@ -24,16 +24,24 @@ export function PlaceHolder({
         ...(!loaded && {
           borderRadius: "3px",
           background: token("colors.gray.200"),
+          cursor: "progress",
         }),
       }}
     >
       <p.div
         style={{
           opacity: loaded ? 1 : 0,
+          userSelect: loaded ? undefined : "none",
         }}
         transition="opacity .3s"
       >
-        <ConfigProvider>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: token("colors.green.500"),
+            },
+          }}
+        >
           <App>{children}</App>
         </ConfigProvider>
       </p.div>

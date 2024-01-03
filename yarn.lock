@@ -919,13 +919,6 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.1.tgz#e5211452df060fa8522b55c7b3c0c4d1981cb044"
   integrity sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==
 
-"@iconify/icons-material-symbols@^1.2.58":
-  version "1.2.58"
-  resolved "https://registry.yarnpkg.com/@iconify/icons-material-symbols/-/icons-material-symbols-1.2.58.tgz#7e94bffecba976f173035e2c06a817b8452fd400"
-  integrity sha512-EFBflkqoJmk8FJqA5U8xgJub3a3IaIX4hZVEY4nTnCr8XM4Qopu8H5DRRI9qStF8K3t7XQIJz3AeWmSZrF3+7w==
-  dependencies:
-    "@iconify/types" "*"
-
 "@iconify/react@^4.1.1":
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/@iconify/react/-/react-4.1.1.tgz#da1bf03cdca9427f07cf22cf5b63fa8f02db4722"
@@ -933,7 +926,7 @@
   dependencies:
     "@iconify/types" "^2.0.0"
 
-"@iconify/types@*", "@iconify/types@^2.0.0":
+"@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
   integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==

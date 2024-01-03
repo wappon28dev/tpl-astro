@@ -1,23 +1,51 @@
 ---
-import { Icon } from "@/components/utils/Icon";
-import { PlaceHolder } from "@/components/utils/PlaceHolder";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { Button } from "antd";
 import { styled as p } from "panda/jsx";
-import accountTreeOutlineRounded from "@iconify/icons-material-symbols/account-tree-outline-rounded";
+import { PlaceHolder } from "@/components/utils/PlaceHolder";
+import { Image } from "astro:assets";
+
+type Cat = {
+  id: string;
+  url: string;
+  width: number;
+  height: number;
+};
+
+const res = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
+const data: Array<Cat> = await res.json();
 ---
 
 <BaseLayout>
-  <p.div fontSize="2xl">よお！</p.div>
-  <PlaceHolder client:load>
-    <Button type="primary" size="large" loading client:load>
-      <p.span>これはボタン</p.span>
-    </Button>
-  </PlaceHolder>
-  <PlaceHolder client:load><p.div>うおおお</p.div></PlaceHolder>
-  <PlaceHolder client:load>
-    <Icon icon={accountTreeOutlineRounded} client:load />
-  </PlaceHolder>
-
-  <p.pre>public static</p.pre>
+  <p.div
+    display="grid"
+    gridTemplateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+    gap="4"
+  >
+    {
+      data.map(({ id, url, width }) => (
+        <p.div bg="orange.100" p="2">
+          <PlaceHolder client:load>
+            <>
+              <p.div width="100%">
+                <Image
+                  src={url}
+                  alt={id}
+                  width={width}
+                  height={200}
+                  style={{
+                    height: "200px",
+                    objectFit: "cover",
+                    borderRadius: "4px",
+                  }}
+                />
+              </p.div>
+              <p.p fontSize="lg" textAlign="center">
+                {id}
+              </p.p>
+            </>
+          </PlaceHolder>
+        </p.div>
+      ))
+    }
+  </p.div>
 </BaseLayout>

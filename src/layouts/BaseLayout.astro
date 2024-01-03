@@ -1,4 +1,5 @@
 ---
+import Header from "@/components/Header.astro";
 import { ViewTransitions } from "astro:transitions";
 import { styled as p } from "panda/jsx";
 ---
@@ -23,7 +24,9 @@ import { styled as p } from "panda/jsx";
       gridTemplateColumns="100%"
       minH="100vh"
     >
-      <p.header />
+      <p.header>
+        <Header />
+      </p.header>
       <p.main m="0 auto" maxW="1200px" p="20px" w="100%">
         <slot />
       </p.main>
