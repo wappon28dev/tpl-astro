@@ -2,6 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { styled as p } from "panda/jsx";
 import { PlaceHolder } from "@/components/utils/PlaceHolder";
+
 import { Image } from "astro:assets";
 
 type Cat = {
@@ -24,26 +25,24 @@ const data: Array<Cat> = await res.json();
     {
       data.map(({ id, url, width }) => (
         <p.div bg="orange.100" p="2">
-          <PlaceHolder client:load>
-            <>
-              <p.div width="100%">
-                <Image
-                  src={url}
-                  alt={id}
-                  width={width}
-                  height={200}
-                  style={{
-                    height: "200px",
-                    objectFit: "cover",
-                    borderRadius: "4px",
-                  }}
-                />
-              </p.div>
-              <p.p fontSize="lg" textAlign="center">
-                {id}
-              </p.p>
-            </>
+          <PlaceHolder client:visible>
+            <p.div width="100%">
+              <Image
+                src={url}
+                alt={id}
+                width={width}
+                height={200}
+                style={{
+                  height: "200px",
+                  objectFit: "cover",
+                  borderRadius: "4px",
+                }}
+              />
+            </p.div>
           </PlaceHolder>
+          <p.p fontSize="lg" textAlign="center">
+            {id}
+          </p.p>
         </p.div>
       ))
     }

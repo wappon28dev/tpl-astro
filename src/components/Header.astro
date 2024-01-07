@@ -23,15 +23,9 @@ import { PlaceHolder } from "./utils/PlaceHolder";
     <p.p fontSize="2xl" fontWeight="bold" color="orange.600">tpl-astro</p.p>
   </p.a>
   <p.span flex="1" />
-  <p.span display="flex" gap="2" justifyContent="center" alignItems="center">
-    <p.a
-      href="https://github.com/wappon28dev/tpl-astro"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <p.img
-        src="https://img.shields.io/github/stars/wappon28dev/tpl-astro?style=social"
-      />
-    </p.a>
-  </p.span>
+  <p.a display="flex" href="https://github.com/wappon28dev/tpl-astro">
+    <PlaceHolder client:load>
+      <Icon icon="logos:github-icon" size={1.2} client:load />
+    </PlaceHolder>
+  </p.a>
 </p.div>

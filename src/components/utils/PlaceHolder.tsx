@@ -15,7 +15,7 @@ export function PlaceHolder({
   }, []);
 
   return (
-    <p.div
+    <p.span
       style={{
         minHeight: "30px",
         minWidth: "30px",
@@ -28,7 +28,7 @@ export function PlaceHolder({
         }),
       }}
     >
-      <p.div
+      <p.span
         style={{
           opacity: loaded ? 1 : 0,
           userSelect: loaded ? undefined : "none",
@@ -44,7 +44,7 @@ export function PlaceHolder({
         >
           <App>{children}</App>
         </ConfigProvider>
-      </p.div>
-    </p.div>
+      </p.span>
+    </p.span>
   );
 }
