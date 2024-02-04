@@ -1,5 +1,4 @@
 import { styled as p } from "panda/jsx";
-import { App, ConfigProvider } from "antd";
 import { useState, type ReactElement, useEffect } from "react";
 import { token } from "panda/tokens";
 
@@ -35,15 +34,7 @@ export function PlaceHolder({
         }}
         transition="opacity .3s"
       >
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: token("colors.green.500"),
-            },
-          }}
-        >
-          <App>{children}</App>
-        </ConfigProvider>
+        {children}
       </p.span>
     </p.span>
   );
